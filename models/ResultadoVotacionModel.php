@@ -8,7 +8,7 @@
 
     protected static $table="ResultadoVotacion";
 
-    public static function ReadModelFromPost(){
+    /*public static function ReadModelFromPost(){
       $idVotacion = Input::get("idVotacion");
       $idOpcion = Input::get("idOpcion");
       $opcionSeleccionada = [
@@ -16,7 +16,7 @@
         'idOpcion' => $idOpcion
       ];
       return $opcionSeleccionada;
-    }
+    }*/
 
     public static function CreateResultadoVotacion($resultadoVotacion){
       try {

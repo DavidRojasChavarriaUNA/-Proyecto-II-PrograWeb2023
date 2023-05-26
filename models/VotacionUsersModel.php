@@ -8,7 +8,7 @@
 
     protected static $table="VotacionUsers";
 
-    public static function ReadModelFromPost($idUser){
+    /*public static function ReadModelFromPost($idUser){
       $idVotacion = Input::get("idVotacion");
       //$idUser = Input::get("idUser");
       $votacionUsuario = [
@@ -16,7 +16,7 @@
         'idUser' => $idUser
       ];
       return $votacionUsuario;
-    }
+    }*/
 
     public static function CreateVotacionUser($votacionUsuario){
       try {
