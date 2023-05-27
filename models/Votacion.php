@@ -52,13 +52,13 @@
       return $votacion;
     }
 
-    public static function ReadModelFromPost(){
-      $id = Input::get('id');
-      $descripcion = Input::get('descripcion');
-      $idEstado = Input::get('idEstado');
-      $fechaHoraInicio = Input::get('fechaHoraInicio');
-      $fechaHoraFin = Input::get('fechaHoraFin');
-      $totalOpciones = Input::get('totalOpciones');
+    public static function ReadModelFromPost($data){
+      $id = $data['id'];
+      $descripcion = $data['descripcion'];
+      $idEstado = $data['idEstado'];
+      $fechaHoraInicio = $data['fechaHoraInicio'];
+      $fechaHoraFin = $data['fechaHoraFin'];
+      $totalOpciones = $data['totalOpciones'];
       $votacion = [
         'id'=>$id,
         'descripcion'=>$descripcion,
