@@ -4,6 +4,9 @@
         <div class="col-12 text-end" style="height: 38px;">
         </div>
     </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary" v-on:click="obtenerVotacionesPendientes">Consultar</button>
+    </div>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -64,12 +67,11 @@
                     if (datosVotacionesUsuario && (datosVotacionesUsuario.Code == Codigos.CodeSuccess)) {
                         this.votacionesPendientes = datosVotacionesUsuario.votaciones;
                     } else {
-                        alert(datosVotacionesUsuario.message);
+                        this.$emit('mostrarMensaje',datosVotacionesUsuario);
                     }
                 } catch (error) {
                     console.log(error);
-                    alert("Ocurrió un error al obtener el usuario");
-                    this.$router.push('/');
+                    this.$emit('mostrarMensaje',{Code: Codigos.CodeError, message: "Ocurrió un error al obtener el usuario"});
                 }
             }
         }

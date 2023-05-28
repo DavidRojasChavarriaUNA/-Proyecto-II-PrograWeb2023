@@ -2,9 +2,9 @@
   <header-sitio-interno v-bind:usuario="usuario"></header-sitio-interno>
   <main id="principal" class="container">
       <section id="toastMensajes">
-        <toast-alert></toast-alert>
+        <toast-alert v-model="respuestaServicio" v-bind:respuestaServicio="respuestaServicio"></toast-alert>
       </section>
-    <router-view></router-view>
+    <router-view v-on:mostrarMensaje="mostrarMensaje"></router-view>
   </main>
   <footer-sitio-interno></footer-sitio-interno>
 </template>
@@ -23,6 +23,11 @@
         usuario: {
           id: "0",
           name: ""
+        },
+        respuestaServicio: {
+          mostrarMensaje: false,
+          Code: Codigos.None,
+          message: ''
         }
       }
     },
@@ -75,6 +80,10 @@
           alert("Ocurrió un error al obtener el usuario");
           this.$router.push('/');
         }
+      },
+      mostrarMensaje(respuestaServidor){
+        respuestaServidor.mostrarMensaje = true;
+        this.respuestaServicio = respuestaServidor;
       }
     }
   }

@@ -1,14 +1,25 @@
 <template>
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div class="alert alert-dark alert-dismissible fade show" role="alert">
-            <p>{{mensaje}}</p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="toast-container position-absolute p-3 bottom-0 end-0"
+        data-original-class="toast-container position-absolute p-3" v-show="respuestaServicio.mostrarMensaje">
+        <div class="toast fade show bg-toast">
+            <div class="toast-header">
+                <strong class="me-auto">Mensaje</strong>
+                <button type="button" class="btn-close" v-on:click="ocultar"></button>
+            </div>
+            <div class="toast-body">
+                <p>{{respuestaServicio.Code}} - {{respuestaServicio.message}}</p>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['mensaje'],
+        props: ['respuestaServicio'],
+        methods: {
+            ocultar() {
+                this.respuestaServicio.mostrarMensaje = false;
+            }
+        }
     }
 </script>
