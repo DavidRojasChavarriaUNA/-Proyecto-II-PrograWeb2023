@@ -3,6 +3,7 @@ import 'bootstrap'
 import '../css/siteInterno.css'
 import '../js/AutoFileToBase64.min.js'
 
+const None = -1;
 const CodeSuccess = 0;
 const CodeUnautorized = 401;
 const CodeExpired = 440;
@@ -14,6 +15,7 @@ const EstadoInactivo = 3;
 const OpcionesPorDefecto = 2;
 
 export const Codigos = {
+    None,
     CodeSuccess,
     CodeUnautorized,
     CodeExpired,
