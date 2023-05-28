@@ -196,7 +196,7 @@
       //se usa una vista para traer la descripción del estado y las votaciones pendientes de los usuarios
       $votaciones = DB::table("vwVotacionesPendientesUsuario")->where('idUser', $idUser)->get();
       if(!empty($votaciones)){
-        return ["Code" => CodeSuccess, "message" => "Votaciones encontradas", "votacion" => $votaciones];
+        return ["Code" => CodeSuccess, "message" => "Votaciones encontradas", "votaciones" => $votaciones];
       }
       return ["Code" => CodeError, "message" => "No cuenta con votaciones pendientes"];
     }

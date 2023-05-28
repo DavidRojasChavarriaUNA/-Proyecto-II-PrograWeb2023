@@ -38,6 +38,7 @@
     public static function getUserById($id){
         $users = self::find($id);
         if(!empty($users)){
+            unset($users[0]['password']);
             return ["Code" => CodeSuccess, "message" => "Usuario encontrado", "User" => $users[0]];
         }
         return ["Code" => CodeNotFound, "message" => "No se encontró un usuario con el id: {$id}."];
