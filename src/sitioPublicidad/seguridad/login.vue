@@ -1,4 +1,5 @@
 <template>
+    <main class="uk-container">
     <article id="registro" class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade"
         uk-height-viewport="expand: true">
         <div class="uk-container">
@@ -10,6 +11,7 @@
                             Bienvenido de vuelta!
                         </h3>
                         <form action="/seguridad/autenticate" method="post" class="uk-form-stacked">
+                            <!-- {{#model}} -->
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="form-stacked-text">Correo electrónico</label>
                                 <div class="uk-inline uk-width-1-1">
@@ -26,7 +28,7 @@
                                         value="{{password}}" required />
                                 </div>
                             </div>
-
+                            <!-- {{/model}} -->
                             <div class="uk-margin">
                                 <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">
                                     Iniciar Sesión
@@ -42,6 +44,7 @@
             </div>
         </div>
     </article>
+</main>
 </template>
 
 <script>

@@ -1,7 +1,77 @@
 <template>
- 
+    <main class="uk-container">
+        <article
+          id="registro"
+          class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade"
+          uk-height-viewport="expand: true"
+        >
+          <div class="uk-container">
+            <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+              <div class="uk-width-1-1@m">
+                <div
+                  class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large"
+                >
+                  <h3 class="uk-card-title uk-text-center">Bienvenido a bordo!</h3>
+                  <form action="/seguridad/register" method="POST">
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Nombre</label>
+                      <div class="uk-inline uk-width-1-1">
+                        <span for="email" class="uk-form-icon" uk-icon="icon: info"></span>
+                        <input class="uk-input uk-form-large" type="text" name="name" maxlength=30 required/>
+                      </div>
+                    </div>
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Correo Electrónico</label>
+                      <div class="uk-inline uk-width-1-1">
+                        <span for="email" class="uk-form-icon" uk-icon="icon: mail"></span>
+                        <input class="uk-input uk-form-large" type="email" name="email" maxlength=100 required/>
+                      </div>
+                    </div>
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Usuario</label>
+                      <div class="uk-inline uk-width-1-1">
+                        <span for="user" class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input class="uk-input uk-form-large" type="text" name="user" maxlength=20 required/>
+                      </div>
+                    </div>
+                    <div class="uk-margin">
+                      <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                      <div class="uk-inline uk-width-1-1">
+                        <span for="password" class="uk-form-icon" uk-icon="icon: lock"></span>
+                        <input class="uk-input uk-form-large" type="password" name="password" maxlength=20 required/>
+                      </div>
+                    </div>
+                    <div class="uk-margin">
+                      <button
+                        class="uk-button uk-button-primary uk-button-large uk-width-1-1"
+                      >
+                        Registrar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </main>
 </template>
 
+
 <script>
- 
+import { Codigos } from '../../js/sitioPublicidad'
+
+const urlBase = 'http://localhost:8089/server';
+
+export default {
+    data() {
+        return {
+        }
+    },
+    components: {
+
+    },
+    methods: {
+    }
+}
 </script>
