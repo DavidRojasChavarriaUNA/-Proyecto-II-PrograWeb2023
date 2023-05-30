@@ -3,10 +3,7 @@
 include_once('./models/Votacion.php');
 include_once('./models/Codes.php');
 include_once('InternalController.php');
-
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header("Access-Control-Allow-Headers: X-Requested-With");
+include_once('cors.php');
 
 class VotacionController extends InternalController
 {

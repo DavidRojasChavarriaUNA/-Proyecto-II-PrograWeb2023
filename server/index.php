@@ -10,7 +10,4 @@ ini_set('display_errors',0);
 session_start();
 require('PHPFramex.php');
 require('routes.php');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header("Access-Control-Allow-Headers: X-Requested-With");
 ?>

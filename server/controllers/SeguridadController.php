@@ -2,10 +2,7 @@
 
 include_once('./models/UserModel.php');
 include_once('./models/Codes.php');
-
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST');
-header("Access-Control-Allow-Headers: X-Requested-With");
+include_once('cors.php');
 
 class  SeguridadController extends Controller{
 

@@ -19,6 +19,7 @@
     
     Route::get('server/votante/(:number)', 'VotanteController@index');
     Route::get('server/votante/(:number)/votar', 'VotanteController@votar');
+    Route::get('server/votante/(:number)/chooseOption', 'VotanteController@chooseOption');
     Route::post('server/votante/confirmOptionVote', 'VotanteController@confirmOptionVote');
 
     Route::get('/resultados', 'ResultadosController@index');

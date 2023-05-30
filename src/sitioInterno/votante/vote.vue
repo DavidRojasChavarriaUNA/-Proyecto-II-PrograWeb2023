@@ -17,20 +17,18 @@
                 </button>
             </div>
         </div>
-        <!-- {{#opcionSeleccionada}}
-        {{#opcionConfirmar}}
-        {{> /modales/modalConfirmarVotacion}}
-        {{/opcionConfirmar}}
-        {{/opcionSeleccionada}}
-        {{^opcionSeleccionada}}
-        {{> /modales/modalDebeSeleccionarUnaOpcion}}
-        {{~opcionSeleccionada}} -->
+        <modal-confirmar-votacion v-if="opcionSeleccionada" v-bind:opcionSeleccionada="opcionSeleccionada"
+            v-on:realizarVotacion="realizarVotacion"></modal-confirmar-votacion>
+        <modal-debe-seleccionar-una-opcion v-else></modal-debe-seleccionar-una-opcion>
     </article>
 </template>
 
 <script>
     import {Codigos} from '../../js/sitioInterno';
     import optionVote from './option.vue';
+    import modalConfirmarVotacion from './modalConfirmarVotacion.vue';
+    import modalDebeSeleccionarUnaOpcion from './modalDebeSeleccionarUnaOpcion.vue';
+    import * as bootstrap from 'bootstrap';
 
     const urlBase = import.meta.env.VITE_BASE_URL;
 
@@ -45,7 +43,9 @@
             }
         },
         components:{
-            optionVote
+            optionVote,
+            modalConfirmarVotacion,
+            modalDebeSeleccionarUnaOpcion
         },
         created() {
             this.InicializarData();
@@ -55,6 +55,9 @@
             InicializarData() {
                 this.idUsuario = this.$route.params.idUsuario;
                 this.votacionSeleccionada.id = this.$route.params.idVotacion;
+            },
+            redireccionarIndex(){
+                this.$router.push(`/votante/${this.idUsuario}`);
             },
             async obtenerVotacionSeleccionada() {
                 try {
@@ -76,11 +79,68 @@
                         Code: Codigos.CodeError,
                         message: "Ocurrió un error al obtener la votación seleccionada"
                     });
-                    this.$router.push(`/votante/${this.idUsuario}`);
+                    this.redireccionarIndex();
                 }
             },
-            seleccionarOpcion(idOpcion){
-                this.opcionSeleccionada = idOpcion;
+            async seleccionarOpcion(idOpcion){
+                try {
+                    const url = `${urlBase}/votante/${idOpcion}/chooseOption`;
+                    const respuestaHttp = await fetch(url, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    const datosOpcionSeleccionada = await respuestaHttp.json();
+                    if (datosOpcionSeleccionada && (datosOpcionSeleccionada.Code == Codigos.CodeSuccess)) {
+                        this.opcionSeleccionada = datosOpcionSeleccionada.opcion;
+                    } else {
+                        this.$emit('mostrarMensaje', datosOpcionSeleccionada);
+                    }
+                } catch (error) {
+                    console.log(error);
+                    this.$emit('mostrarMensaje', {
+                        Code: Codigos.CodeError,
+                        message: "Ocurrió un error al obtener la opción seleccionada"
+                    });
+                }
+            },
+            cerrarModalConfirmacionVoto(){
+                const modalConfirmarVotacionElem = document.querySelector('#modalConfirmarVotacion');
+                const modalConfirmarVotacion = bootstrap.Modal.getInstance(modalConfirmarVotacionElem);
+                modalConfirmarVotacion.hide();
+            },
+            async realizarVotacion(){
+                try {
+                    this.cerrarModalConfirmacionVoto();
+                    const url = `${urlBase}/votante/confirmOptionVote`;
+                    const respuestaHttp = await fetch(url, {
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+   	                    method: 'POST',
+                        body: JSON.stringify({
+                            OpcionSeleccionada: {
+                                "idVotacion": this.votacionSeleccionada.id,
+                                "idOpcion": this.opcionSeleccionada.id
+                            },
+                            votacionUsuario: {
+                                "idVotacion": this.votacionSeleccionada.id,
+                                "idUser" : this.idUsuario
+                            }
+                        })
+                    });
+                    const datosVoto = await respuestaHttp.json();
+                    this.$emit('mostrarMensaje', datosVoto);
+                    this.redireccionarIndex();
+                } catch (error) {
+                    console.log(error);
+                    this.$emit('mostrarMensaje', {
+                        Code: Codigos.CodeError,
+                        message: "Ocurrió un error al realizar la votación"
+                    });
+                    this.redireccionarIndex();
+                }
             }
         }
     }

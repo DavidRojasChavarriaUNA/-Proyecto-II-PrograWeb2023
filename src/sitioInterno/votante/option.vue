@@ -20,8 +20,8 @@
                 <div class="row">
                     <div class="col-12">
                         <input type="radio" class="btn-check" name="opcionSeleccionada" :id="`radio${opcion.id}`"
-                            autocomplete="off" v-on:change="NotificarOpcionSeleccionada(opcion.id)">
-                        <label class="btn btn-outline-primary width-100" :for="`radio${opcion.id}`">Seleccionar</label>
+                            autocomplete="off" v-on:change="NotificarOpcionSeleccionada(opcion.id, `lblOpcion${opcion.id}`)">
+                        <label :id="`lblOpcion${opcion.id}`" class="btn btn-outline-primary width-100 opcionVoto" :for="`radio${opcion.id}`">Seleccionar</label>
                     </div>
                 </div>
             </div>
@@ -33,8 +33,12 @@
     export default {
         props: ['opcion'],
         methods:{
-            NotificarOpcionSeleccionada(idOpcionSeleccioanda){
-                this.$emit('seleccionarOpcion',idOpcionSeleccioanda);
+            NotificarOpcionSeleccionada(idOpcionSeleccionada, idEtiqueta){
+                const etiquetasOpcionesVoto = document.querySelectorAll('.opcionVoto');
+                etiquetasOpcionesVoto.forEach(e => e.innerHTML = "Seleccionar");
+                const lblEtiquetaSeleccionada = document.querySelector(`#${idEtiqueta}`);
+                lblEtiquetaSeleccionada.innerHTML = "Seleccionado";
+                this.$emit('seleccionarOpcion',idOpcionSeleccionada);
             }
         }
     }

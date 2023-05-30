@@ -17,7 +17,7 @@
                                 </li>
                                 <li>
                                     <section>
-                                        <img src="/public/assets/imagenes/diseño responsivo.jpeg" alt="" uk-cover
+                                        <img src="/public/assets/imagenes/diseñoResponsivo.jpeg" alt="" uk-cover
                                             class="img-responsive">
                                         <h1 class="textoEnCarrusel h1TextoImg2">Diseño adaptable</h1>
                                         <p class="textoEnCarrusel pTextoImg2">No importa el tamaño del dispositivo del usuario,
@@ -54,7 +54,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/play station.png" class="img-responsive">
+                                    <img src="/public/assets/imagenes/playstation.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
