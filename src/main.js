@@ -7,6 +7,7 @@ import VotanteIndex from './sitioInterno/votante/index.vue'
 import Votar from './sitioInterno/votante/vote.vue'
 
 import SitioPublicidad from './sitioPublicidad/App.vue'
+import Home from './sitioPublicidad/home.vue'
 import Register from './sitioPublicidad/seguridad/register.vue'
 import Login from './sitioPublicidad/seguridad/login.vue'
 
@@ -17,21 +18,23 @@ const routes = [
             { path: '/votante/:idUsuario/:idVotacion/votar', component: Votar }
         ]
     },
-    { path: '/sitioPublicidad', component: SitioPublicidad,
-    children:[
-        { path: '/register', component: Register },
-        { path: '/login', component: Login }
-    ]
-},
+    {
+        path: '/sitioPublicidad', component: SitioPublicidad,
+        children: [
+            { path: '/home', component: Home },
+            { path: '/register', component: Register },
+            { path: '/login', component: Login }
+        ]
+    },
 ]
-  
+
 const router = createRouter({
     history: createWebHistory(),
     routes: routes
 })
-  
+
 const app = createApp(App)
-  
+
 app.use(router)
 
 app.mount('#app')

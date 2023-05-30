@@ -6,30 +6,30 @@
            <div class="uk-navbar-left">
                <ul class="uk-navbar-nav">
                    <li class="uk-parent">
-                       <a class="text-menu" href="/#bienvenida">
+                       <a class="text-menu" href="/home">
                            <img src="/public/assets/imagenes/logo.png" class="logo img-responsive" />
                        </a>
                    </li>
-                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/#lstClientes">Clientes</a></li>
+                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/home#lstClientes">Clientes</a></li>
                    
                    <li class="uk-parent uk-visible@m"><a class="text-menu" href="#">Caracteristicas</a></li>
                    <div class="uk-navbar-dropdown uk-visible@m">
                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                           <li class=""><a href="/#lstCaractFuncUsuario">Usuario</a></li>
-                           <li class=""><a href="/#lstCaractTenicas">Técnicas</a></li>
+                           <li class=""><a href="/home#lstCaractFuncUsuario">Usuario</a></li>
+                           <li class=""><a href="/home#lstCaractTenicas">Técnicas</a></li>
                        </ul>
                    </div>
    
-                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/#lstFuncAdministradores">Funcionalidades administradores</a></li>
-                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/#srvCliente">Servicio al cliente</a></li>
-                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/#planesPrecios">Planes y precios</a></li>
+                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/home#lstFuncAdministradores">Funcionalidades administradores</a></li>
+                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/home#srvCliente">Servicio al cliente</a></li>
+                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/home#planesPrecios">Planes y precios</a></li>
                </ul>
            </div>
            <!--menu a la derecha-->
            <div class="uk-navbar-right red-on-hover">
                <ul class="uk-navbar-nav">
-                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/register">Registrarse</a></li>
-                   <li class="uk-parent uk-visible@m"><a class="text-menu" href="/login">Ingresar</a></li>
+                   <li class="uk-parent uk-visible@m"><router-link to="/register">Registrarse</router-link></li>
+                   <li class="uk-parent uk-visible@m"><router-link to="/login">Ingresar</router-link></li>
                    <li class="uk-hidden@m">
                        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#menu-responsivo" uk-toggle></a>
                    </li>
@@ -56,7 +56,7 @@
                    </li>
                    <li><a class="text-menu" href="/#lstFuncAdministradores">Funcionalidades administradores</a></li>
                    <li><a class="text-menu" href="/#srvCliente">Servicio al cliente</a></li>
-                   <li><a class="text-menu" href="/#planesPrecios">Planes y precios</a></li>
+                   <li><a class="text-menu" href="/#planesPrecios" >Planes y precios</a></li>
                    <li class="uk-nav-divider"></li>
                    <li><a class="text-menu" href="/register">Registrarse</a></li>
                    <li><a class="text-menu" href="/login">Ingresar</a></li>
