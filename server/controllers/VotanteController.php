@@ -6,6 +6,10 @@
   include_once('./models/ResultadoVotacionModel.php');
   include_once('./models/VotacionUsersModel.php');
 
+  header('Access-Control-Allow-Origin: *');
+  header('Access-Control-Allow-Methods: GET, POST');
+  header("Access-Control-Allow-Headers: X-Requested-With");
+  
   class VotanteController extends Controller {      
 
     public function index($idUsuario) {

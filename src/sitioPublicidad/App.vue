@@ -496,7 +496,7 @@ import headerPublicidad from './headerPublicidad.vue'
 import footerPublicidad from './footerPublicidad.vue'
 import toastAlert from '../toadsAlerts/toastAlert.vue'
 
-const urlBase = 'http://localhost:8089/server'
+const urlBase = import.meta.env.VITE_BASE_URL;
 
 export default {
   data() {

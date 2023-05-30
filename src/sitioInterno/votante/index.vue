@@ -19,16 +19,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="votacion in votaciones" :key="votacion.id">
+                <tr v-for="votacion in votacionesPendientes" :key="votacion.id">
                     <td>{{votacion.descripcion}}</td>
                     <td>{{votacion.estado}}</td>
                     <td>{{votacion.fechaHoraInicio}}</td>
                     <td>{{votacion.fechaHoraFin}}</td>
                     <td>
-                        <!-- <a href="/votante/{{id}}/votar" class="text-primary accion" title="Votar"><i
-                                class="bi bi-x-square-fill"></i></a>
-                        <a href="/resultados/{{id}}" class="text-success accion" title="Ver resultados"><i
-                                class="bi bi-eye-fill"></i></a> -->
+                        <router-link :to="`/votante/${idUsuario}/${votacion.id}/votar`" class="text-primary accion" title="Votar"><i
+                                class="bi bi-x-square-fill"></i></router-link>
+                        <router-link :to="`/resultados/${votacion.id}`" class="text-success accion" title="Ver resultados"><i
+                                class="bi bi-eye-fill"></i></router-link>
                     </td>
                 </tr>
             </tbody>
@@ -39,7 +39,7 @@
 <script>
     import {Codigos} from '../../js/sitioInterno'
 
-    const urlBase = 'http://localhost:8089/server';
+    const urlBase = import.meta.env.VITE_BASE_URL;
 
     export default {
         data() {
@@ -71,7 +71,7 @@
                     }
                 } catch (error) {
                     console.log(error);
-                    this.$emit('mostrarMensaje',{Code: Codigos.CodeError, message: "Ocurrió un error al obtener el usuario"});
+                    this.$emit('mostrarMensaje',{Code: Codigos.CodeError, message: "Ocurrió un error al obtener las votaciones pendientes del usuario"});
                 }
             }
         }
