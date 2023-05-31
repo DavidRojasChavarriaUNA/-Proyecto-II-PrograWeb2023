@@ -89,7 +89,7 @@ export default {
         const respuesta = await respuestaHttp.json();
         if (respuesta && (respuesta.Code == Codigos.CodeSuccess)) {
           //enviar al login
-          this.$emit('mostrarMensaje', respuesta);
+          router.push('/login');
         } else {
           this.$emit('mostrarMensaje', respuesta);
         }
