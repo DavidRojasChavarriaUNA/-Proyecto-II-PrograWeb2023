@@ -15,7 +15,7 @@
   import footerSitioInterno from './footerSitioInterno.vue'
   import toastAlert from '../toadsAlerts/toastAlert.vue'
 
-  const urlBase = 'http://localhost:8089/server'
+  const urlBase = import.meta.env.VITE_BASE_URL;
 
   export default {
     data() {

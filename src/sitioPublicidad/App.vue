@@ -8,7 +8,7 @@
 import headerPublicidad from './headerPublicidad.vue'
 import footerPublicidad from './footerPublicidad.vue'
 
-const urlBase = 'http://localhost:8089/server'
+const urlBase = import.meta.env.VITE_BASE_URL;
 
 export default {
   data() {
@@ -23,3 +23,6 @@ export default {
   }
 }
 </script>
+<style lang="less">
+  @import "../node_modules/uikit/src/less/uikit.less";
+</style>

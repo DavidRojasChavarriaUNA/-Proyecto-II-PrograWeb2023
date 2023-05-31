@@ -19,10 +19,10 @@
     
     Route::get('server/votante/(:number)', 'VotanteController@index');
     Route::get('server/votante/(:number)/votar', 'VotanteController@votar');
+    Route::get('server/votante/(:number)/chooseOption', 'VotanteController@chooseOption');
     Route::post('server/votante/confirmOptionVote', 'VotanteController@confirmOptionVote');
 
     Route::get('server/resultados', 'ResultadosController@index');
-    Route::get('server/resultados/(:number)/votar', 'ResultadosController@votar');
     Route::get('server/resultados/(:number)','ResultadosController@show');
 
     Route::dispatch();

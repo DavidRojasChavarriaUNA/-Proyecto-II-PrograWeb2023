@@ -1,4 +1,4 @@
-import '../css/sitePublicidad.css'
+import '../css/SitePublicidad.css'
 import uk from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 uk.use(Icons)

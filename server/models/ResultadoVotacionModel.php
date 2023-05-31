@@ -8,16 +8,6 @@
 
     protected static $table="ResultadoVotacion";
 
-    /*public static function ReadModelFromPost(){
-      $idVotacion = Input::get("idVotacion");
-      $idOpcion = Input::get("idOpcion");
-      $opcionSeleccionada = [
-        'idVotacion' => $idVotacion,
-        'idOpcion' => $idOpcion
-      ];
-      return $opcionSeleccionada;
-    }*/
-
     public static function CreateResultadoVotacion($resultadoVotacion){
       try {
           self::create($resultadoVotacion);

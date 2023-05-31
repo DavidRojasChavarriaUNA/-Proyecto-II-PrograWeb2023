@@ -3,7 +3,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 
 import SitioInterno from './sitioInterno/App.vue'
-import Votante from './sitioInterno/votante/App.vue'
+import VotanteIndex from './sitioInterno/votante/index.vue'
+import Votar from './sitioInterno/votante/vote.vue'
+import ResultadosIndex from './sitioInterno/resultados/index.vue'
+import resultDetalle from './sitioInterno/resultados/resultDetails.vue'
 
 import SitioPublicidad from './sitioPublicidad/App.vue'
 import Home from './sitioPublicidad/home.vue'
@@ -11,20 +14,32 @@ import Register from './sitioPublicidad/seguridad/register.vue'
 import Login from './sitioPublicidad/seguridad/login.vue'
 
 const routes = [
-    {
-        path: '/sitioInterno/:idUsuario', component: SitioInterno,
+    { 
+        path: '/', component: SitioPublicidad ,
         children: [
-            { path: '/votante/:idUsuario', component: Votante }
+            { path: '/', component: Home },
+            { path: '/home', component: Home },
+            { path: '/register', component: Register },
+            { path: '/login', component: Login }
+        ]
+    }, 
+    { 
+        path: '/sitioInterno/:idUsuario', component: SitioInterno,
+        children:[
+            { path: '/votante/:idUsuario', component: VotanteIndex },
+            { path: '/votante/:idUsuario/:idVotacion/votar', component: Votar },
+            { path: '/resultados/:idUsuario', component: ResultadosIndex },
+            { path: '/resultados/:idUsuario/:idVotacion', component: resultDetalle }
         ]
     },
-    {
+    /*{
         path: '/sitioPublicidad', component: SitioPublicidad,
         children: [
             { path: '/home', component: Home },
             { path: '/register', component: Register },
             { path: '/login', component: Login }
         ]
-    },
+    },*/
 ]
 
 const router = createRouter({

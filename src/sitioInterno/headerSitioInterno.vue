@@ -17,7 +17,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">Votante</a>
               <ul class="dropdown-menu" aria-labelledby="menuVotante">
                 <li>
-                  <router-link class="dropdown-item" :to="/votante/ + usuario.id">Votaciones pendientes</router-link>
+                  <router-link class="dropdown-item" :to="`/votante/${usuario.id}`">Votaciones pendientes</router-link>
                 </li>
               </ul>
             </li>
@@ -34,7 +34,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link text-light" to="/resultados">Resultados</router-link>
+              <router-link class="nav-link text-light" :to="`/resultados/${usuario.id}`">Resultados</router-link>
             </li>
           </ul>
         </div>

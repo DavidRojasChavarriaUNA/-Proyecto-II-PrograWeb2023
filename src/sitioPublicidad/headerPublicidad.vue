@@ -6,9 +6,9 @@
            <div class="uk-navbar-left">
                <ul class="uk-navbar-nav">
                    <li class="uk-parent">
-                       <a class="text-menu" href="/home">
+                       <router-link class="text-menu" to="/home">
                            <img src="/public/assets/imagenes/logo.png" class="logo img-responsive" />
-                       </a>
+                       </router-link>
                    </li>
                    <li class="uk-parent uk-visible@m"><a class="text-menu" href="/home#lstClientes">Clientes</a></li>
                    
