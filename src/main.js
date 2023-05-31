@@ -14,7 +14,17 @@ import Register from './sitioPublicidad/seguridad/register.vue'
 import Login from './sitioPublicidad/seguridad/login.vue'
 
 const routes = [
-    { path: '/sitioInterno/:idUsuario', component: SitioInterno,
+    { 
+        path: '/', component: SitioPublicidad ,
+        children: [
+            { path: '/', component: Home },
+            { path: '/home', component: Home },
+            { path: '/register', component: Register },
+            { path: '/login', component: Login }
+        ]
+    }, 
+    { 
+        path: '/sitioInterno/:idUsuario', component: SitioInterno,
         children:[
             { path: '/votante/:idUsuario', component: VotanteIndex },
             { path: '/votante/:idUsuario/:idVotacion/votar', component: Votar },
@@ -22,14 +32,14 @@ const routes = [
             { path: '/resultados/:idUsuario/:idVotacion', component: resultDetalle }
         ]
     },
-    {
+    /*{
         path: '/sitioPublicidad', component: SitioPublicidad,
         children: [
             { path: '/home', component: Home },
             { path: '/register', component: Register },
             { path: '/login', component: Login }
         ]
-    },
+    },*/
 ]
 
 const router = createRouter({
