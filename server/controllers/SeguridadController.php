@@ -2,6 +2,7 @@
 
 include_once('./models/UserModel.php');
 include_once('./models/Codes.php');
+include_once('cors.php');
 
 class  SeguridadController extends Controller{
 
