@@ -6,8 +6,8 @@
         </section>
         <div class="container">
             <div class="row bg-white">
-                <option-vote v-for="opcion in votacionSeleccionada.opciones" 
-                    v-bind:key="opcion.id" v-bind:opcion="opcion" v-on:seleccionarOpcion="seleccionarOpcion">
+                <option-vote v-for="opcion in votacionSeleccionada.opciones" v-bind:key="opcion.id"
+                    v-bind:opcion="opcion" v-on:seleccionarOpcion="seleccionarOpcion">
                 </option-vote>
             </div>
             <div class="d-grid gap-2 col-6 mx-auto mt-5">
@@ -42,7 +42,7 @@
                 opcionSeleccionada: null
             }
         },
-        components:{
+        components: {
             optionVote,
             modalConfirmarVotacion,
             modalDebeSeleccionarUnaOpcion
@@ -56,7 +56,7 @@
                 this.idUsuario = this.$route.params.idUsuario;
                 this.votacionSeleccionada.id = this.$route.params.idVotacion;
             },
-            redireccionarIndex(){
+            redireccionarIndex() {
                 this.$router.push(`/votante/${this.idUsuario}`);
             },
             async obtenerVotacionSeleccionada() {
@@ -82,7 +82,7 @@
                     this.redireccionarIndex();
                 }
             },
-            async seleccionarOpcion(idOpcion){
+            async seleccionarOpcion(idOpcion) {
                 try {
                     const url = `${urlBase}/votante/${idOpcion}/chooseOption`;
                     const respuestaHttp = await fetch(url, {
@@ -104,29 +104,31 @@
                     });
                 }
             },
-            cerrarModalConfirmacionVoto(){
+            cerrarModalConfirmacionVoto() {
                 const modalConfirmarVotacionElem = document.querySelector('#modalConfirmarVotacion');
                 const modalConfirmarVotacion = bootstrap.Modal.getInstance(modalConfirmarVotacionElem);
                 modalConfirmarVotacion.hide();
             },
-            async realizarVotacion(){
+            async realizarVotacion() {
                 try {
+
                     this.cerrarModalConfirmacionVoto();
                     const url = `${urlBase}/votante/confirmOptionVote`;
+
                     const respuestaHttp = await fetch(url, {
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
+                        headers:{
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
                         },
-   	                    method: 'POST',
+                        method: 'POST',
                         body: JSON.stringify({
-                            OpcionSeleccionada: {
+                            "OpcionSeleccionada": {
                                 "idVotacion": this.votacionSeleccionada.id,
                                 "idOpcion": this.opcionSeleccionada.id
                             },
-                            votacionUsuario: {
+                            "votacionUsuario": {
                                 "idVotacion": this.votacionSeleccionada.id,
-                                "idUser" : this.idUsuario
+                                "idUser": this.idUsuario
                             }
                         })
                     });

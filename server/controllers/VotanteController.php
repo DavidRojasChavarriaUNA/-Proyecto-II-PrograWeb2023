@@ -25,16 +25,14 @@
     }
 
     public function confirmOptionVote($Datos) {
-        //$opcionSeleccionada = ResultadoVotacionModel::ReadModelFromPost();
         $opcionSeleccionada = $Datos["OpcionSeleccionada"];
         $respuesta = ResultadoVotacionModel::CreateResultadoVotacion($opcionSeleccionada);
-        $mensaje = "{$respuesta["Code"]} - {$respuesta["message"]}";
+        $mensaje = "{$respuesta["message"]}";
         if ($respuesta["Code"] == CodeSuccess) {
-            //$votacionUsuario = VotacionUsersModel::ReadModelFromPost($this->User['id']);
             $votacionUsuario = $Datos["votacionUsuario"];
             $respuesta = VotacionUsersModel::CreateVotacionUser($votacionUsuario);
             //si hay un mensaje anterior se concatena al nuevo
-            $respuesta["message"] = (!empty($mensaje)? "{$mensaje} \n" : "") . "{$respuesta["Code"]} - {$respuesta["message"]}";
+            $respuesta["message"] = (!empty($mensaje)? "{$mensaje} <br>" : "") . "{$respuesta["Code"]} - {$respuesta["message"]}";
         }
         return $respuesta;
     }
