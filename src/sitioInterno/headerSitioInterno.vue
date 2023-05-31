@@ -34,7 +34,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link text-light" to="/resultados">Resultados</router-link>
+              <router-link class="nav-link text-light" :to="`/resultados/${usuario.id}`">Resultados</router-link>
             </li>
           </ul>
         </div>

@@ -6,7 +6,7 @@ include_once('InternalController.php');
 include_once('./models/ResultadoVotacionModel.php');
 include_once('cors.php');
 
-class ResultadosController extends InternalController
+class ResultadosController extends Controller
 {
 
   public function index()
@@ -42,7 +42,9 @@ class ResultadosController extends InternalController
           array_push($ResultadosTotal, $opc);
         }
       }
-      return ["code"=>0, "message" => "Resultados obtenidos con éxito.", "resultados" =>$ResultadosTotal];
+      unset($votacion["opciones"]);
+      $votacion["resultados"] = $ResultadosTotal;
+      return ["Code"=>0, "message" => "Resultados obtenidos con éxito.", "votacion" => $votacion];
 
     } else {
       return $respuesta;

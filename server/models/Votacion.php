@@ -215,9 +215,9 @@
       $votacionesInactivas = DB::table("vwVotaciones")->where('idEstado', EstadoInactivo)->get();
       $votaciones = array_merge($votacionesActivas, $votacionesInactivas);
       if(!empty($votaciones)){
-        return ["Code" => CodeSuccess, "message" => "Votaciones encontradas", "votacion" => $votaciones];
+        return ["Code" => CodeSuccess, "message" => "Votaciones encontradas", "votaciones" => $votaciones];
       }
-      return ["Code" => CodeError, "message" => "No cuenta con votaciones finalizadas"];
+      return ["Code" => CodeError, "message" => "No hay votaciones activas o finalizadas"];
     }
 
     public static function DestroyVotacion($id){
