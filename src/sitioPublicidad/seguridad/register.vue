@@ -58,7 +58,7 @@
 <script>
 import { Codigos } from '../../js/sitioPublicidad'
 
-const urlBase = 'http://localhost:8089/server';
+const urlBase = import.meta.env.VITE_BASE_URL;
 
 export default {
   data() {
@@ -68,9 +68,6 @@ export default {
   },
   components: {
 
-  },
-  created() {
-    this.createUser();
   },
   methods: {
     async createUser(u) { 

@@ -11,11 +11,13 @@
             if(!isset($userToAutenticate) || !isset($userToAutenticate["email"]) || !isset($userToAutenticate["password"]))
                 return ["Code" => CodeUnautorized, "message" => "Usuario y contraseña es requerido."];
 
-            $result = Auth::attempt($userToAutenticate);
-            if($result){
-                return ["Code" => CodeSuccess, "message" => "Usuario autenticado"];
-            }
-            else{
+            $result = self::find($userToAutenticate["email"]);
+            if(!empty($result)){
+                if(($result[0]['password']) == ($userToAutenticate["password"])){
+                    return ["Code" => CodeSuccess, "message" => "Usuario autenticado", "id" => $result[0]['id']];
+                }
+            
+            }else{
                 return ["Code" => CodeUnautorized, "message" => "Usuario o contraseña inválido."];
             }
         }

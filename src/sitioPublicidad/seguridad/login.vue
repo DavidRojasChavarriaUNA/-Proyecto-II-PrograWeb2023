@@ -48,7 +48,7 @@
 <script>
 import { Codigos } from '../../js/sitioPublicidad'
 
-const urlBase = 'http://localhost:8089/server';
+const urlBase = import.meta.env.VITE_BASE_URL;
 
 export default {
   data() {
@@ -59,13 +59,11 @@ export default {
   components: {
 
   },
-  created() {
-    this.loginUser();
-  },
   methods: {
     async loginUser(u) { 
       console.log(u);
       try {
+      
         const respuestaHttp = await fetch(`${urlBase}/seguridad/autenticate`,
           {
             headers: {
@@ -75,13 +73,13 @@ export default {
             method: 'POST',
             body: JSON.stringify(u)
           });
-          console.log(respuestaHttp);
+          console.log('RERS'+respuestaHttp);
         const respuesta = await respuestaHttp.json();
         console.log('RESPUESTA '+respuesta);
         if (respuesta && (respuesta.Code == Codigos.CodeSuccess)) {
-          this.$emit('mostrarMensaje', respuesta);
+          //this.$emit('mostrarMensaje', respuesta);
           //enviar al sitio interno
-         // router.push('/sitioInterno/:idUsuario');
+          router.push(`/sitioInterno/${respuesta.id}`);
         } else {
           this.$emit('mostrarMensaje', respuesta);
         }
