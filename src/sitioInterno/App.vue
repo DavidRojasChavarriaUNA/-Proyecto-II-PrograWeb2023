@@ -49,7 +49,7 @@
         //se quitan todos los footer para limpiar si se duplican
         document.querySelectorAll("footer").forEach(f => f.remove());
         //se determina si es el sitio interno la pantalla de ingreso, para acomodar el footer en su posición
-        if (this.$route.fullPath.includes('/sitioInterno')) {
+        if (this.$route.fullPath.toLowerCase().includes('/sitiointerno')) {
           body.classList.add('d-flex', 'flex-column', 'min-vh-100');
           footer.classList.add('mt-auto');
           body.appendChild(footer);

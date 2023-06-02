@@ -26,10 +26,10 @@
                 role="button" data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
               <ul class="dropdown-menu" aria-labelledby="menuAdmin">
                 <li>
-                  <router-link class="dropdown-item" :to="/votacion\/create/ + usuario.id">Crear votación</router-link>
+                  <router-link class="dropdown-item" :to="`/votacion/create/${usuario.id}`">Crear votación</router-link>
                 </li>
                 <li>
-                  <router-link class="dropdown-item" :to="/votacion/ + usuario.id">Modificar votación</router-link>
+                  <router-link class="dropdown-item" :to="`/votacion/${usuario.id}`">Modificar votación</router-link>
                 </li>
               </ul>
             </li>
