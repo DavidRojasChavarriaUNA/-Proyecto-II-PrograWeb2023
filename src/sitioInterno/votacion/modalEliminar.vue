@@ -1,7 +1,6 @@
 <template>
     <!-- Modal Eliminar-->
-    <div class="modal fade" :id="`modalEliminar${posicion}`" tabindex="-1" aria-labelledby="labelEliminar"
-        aria-hidden="true">
+    <div class="modal fade" :id="`modalEliminar${posicion}`" tabindex="-1" aria-labelledby="labelEliminar" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
