@@ -28,8 +28,8 @@
            <!--menu a la derecha-->
            <div class="uk-navbar-right red-on-hover">
                <ul class="uk-navbar-nav">
-                   <li class="uk-parent uk-visible@m"><router-link to="/register">Registrarse</router-link></li>
-                   <li class="uk-parent uk-visible@m"><router-link to="/login">Ingresar</router-link></li>
+                   <li class="uk-parent uk-visible@m"><router-link class="text-menu" to="/register">Registrarse</router-link></li>
+                   <li class="uk-parent uk-visible@m"><router-link class="text-menu" to="/login">Ingresar</router-link></li>
                    <li class="uk-hidden@m">
                        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#menu-responsivo" uk-toggle></a>
                    </li>
@@ -42,9 +42,9 @@
                <button class="uk-offcanvas-close" type="button" uk-close></button>
                <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
                    <li>
-                       <a class="text-menu" href="/#bienvenida">
+                       <router-link class="text-menu" to="/#bienvenida">
                            <img src="/public/assets/imagenes/logo.png" class="logo img-responsive" style="margin-left: -5px; margin-top: -13px;" />
-                       </a>
+                       </router-link>
                    </li>
                    <li><a class="text-menu" href="/#lstClientes">Clientes</a></li>
                    <li class="uk-parent">
@@ -58,8 +58,8 @@
                    <li><a class="text-menu" href="/#srvCliente">Servicio al cliente</a></li>
                    <li><a class="text-menu" href="/#planesPrecios" >Planes y precios</a></li>
                    <li class="uk-nav-divider"></li>
-                   <li><a class="text-menu" href="/register">Registrarse</a></li>
-                   <li><a class="text-menu" href="/login">Ingresar</a></li>
+                   <li><router-link class="text-menu" to="/register">Registrarse</router-link></li>
+                   <li><router-link class="text-menu" to="/login">Ingresar</router-link></li>
                </ul>
            </div>
        </nav>

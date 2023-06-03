@@ -40,7 +40,7 @@
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav d-flex">
-            <li class="me-3" style="max-height:38px">
+            <li class="me-3">
               <form class="d-flex">
                 <input class="form-control me-2" type="text" placeholder="Search">
                 <button class="btn btn-primary" type="button">Search</button>
@@ -50,7 +50,7 @@
               <a class="nav-link text-light">{{usuario.user}}</a>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link text-light" to="/seguridad/logout">Salir</router-link>
+              <router-link class="nav-link text-light" to="/">Salir</router-link>
             </li>
           </ul>
         </div>

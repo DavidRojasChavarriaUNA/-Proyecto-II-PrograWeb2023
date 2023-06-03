@@ -84,8 +84,8 @@
                 this.idUsuario = this.$route.params.idUsuario;
             },
             redireccionarEditar() {
-                //this.$router.push(`/votacion/${this.idUsuario}/${this.votacion.id}`);
-                this.crearNuevaVotacion();
+                this.$router.push(`/votacion/${this.idUsuario}/${this.votacion.id}`);
+                //this.crearNuevaVotacion();
             },
             crearNuevaVotacion(){
                 this.votacion = {
