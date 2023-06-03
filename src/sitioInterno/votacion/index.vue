@@ -26,16 +26,15 @@
                         <td>{{ votacion.fechaHoraInicio }}</td>
                         <td>{{ votacion.fechaHoraFin }}</td>
                         <td>
-                            <router-link :to="`/votacion/${idUsuario}/${votacion.id}/edit`" class="text-primary accion"
+                            <router-link  :id="`btn${votacion.idEstado}`" :to="`/votacion/${idUsuario}/${votacion.id}/edit`" class="text-primary accion"
                                 title="Modificar"><i class="bi bi-pencil"></i></router-link>
-                            <router-link :to="`/resultados/${idUsuario}/${votacion.id}`" class="text-success accion"
+                            <router-link :id="`btnResultados${votacion.idEstado}`" :to="`/resultados/${idUsuario}/${votacion.id}`" class="text-success accion"
                                 title="Ver resultados"><i class="bi bi-eye-fill"></i></router-link>
 
-
-                            <a :id="`btn${votacion.estado}`" class="text-danger accion" title="Eliminar"
+                            <a :id="`btn${votacion.idEstado}`" class="text-danger accion" title="Eliminar"
                                 data-bs-toggle="modal" :data-bs-target="`#modalEliminar${votacion.id}`"><i
                                     class="bi bi-trash"></i></a>
-                            <a :id="`btnDesactivar${votacion.estado}`" class="text-danger accion" title="Desactivar"
+                            <a :id="`btnDesactivar${votacion.idEstado}`" class="text-danger accion" title="Desactivar"
                                 data-bs-toggle="modal" :data-bs-target="`#modalDesactivar${votacion.id}`"><i
                                     class="bi bi-x-lg"></i></a>
                             <modal-eliminar-vue v-bind:id="votacion.id"
