@@ -2,7 +2,6 @@
 
 include_once('./models/Votacion.php');
 include_once('./models/Codes.php');
-include_once('InternalController.php');
 include_once('./models/ResultadoVotacionModel.php');
 include_once('cors.php');
 

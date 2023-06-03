@@ -3,8 +3,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 
 import SitioInterno from './sitioInterno/App.vue'
+
+import CrearVotacion from './sitioInterno/votacion/create.vue'
+
 import VotanteIndex from './sitioInterno/votante/index.vue'
 import Votar from './sitioInterno/votante/vote.vue'
+
 import ResultadosIndex from './sitioInterno/resultados/index.vue'
 import resultDetalle from './sitioInterno/resultados/resultDetails.vue'
 
@@ -28,6 +32,9 @@ const routes = [
         children:[
             { path: '/votante/:idUsuario', component: VotanteIndex },
             { path: '/votante/:idUsuario/:idVotacion/votar', component: Votar },
+            { path: '/votacion/create/:idUsuario', component: CrearVotacion },
+            //{ path: '/votacion/:idUsuario', component:  },--componente index de editar
+            //{ path: '/votacion/:idUsuario/:idVotacion/', component:  }, --componente editar votacion
             { path: '/resultados/:idUsuario', component: ResultadosIndex },
             { path: '/resultados/:idUsuario/:idVotacion', component: resultDetalle }
         ]

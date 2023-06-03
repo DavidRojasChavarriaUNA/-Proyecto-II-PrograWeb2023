@@ -28,13 +28,13 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" v-on:click="loginUser(user)">
+                                <button type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1" v-on:click="loginUser(user)">
                                     Iniciar Sesión
                                 </button>
                             </div>
                             <div class="uk-text-small uk-text-center">
                                 Necesita registrarse?
-                                <a href="/seguridad/showRegistrationForm">Crear una cuenta</a>
+                                <router-link to="/register">Crear una cuenta</router-link>
                             </div>
                         </form>
                     </div>
@@ -79,7 +79,7 @@ export default {
         if (respuesta && (respuesta.Code == Codigos.CodeSuccess)) {
           //this.$emit('mostrarMensaje', respuesta);
           //enviar al sitio interno
-          router.push(`/sitioInterno/${respuesta.id}`);
+          this.$router.push(`/sitioInterno/${respuesta.id}`);
         } else {
           this.$emit('mostrarMensaje', respuesta);
         }

@@ -2,44 +2,20 @@
 
 include_once('./models/Votacion.php');
 include_once('./models/Codes.php');
-include_once('InternalController.php');
 include_once('cors.php');
 
-class VotacionController extends InternalController
+class VotacionController extends Controller
 {
-
-  public function create($votacion)
-  {
-    if (!isset($votacion))
-      $votacion = VotacionModel::GenerateDefaultVotacion();
-
-    return $votacion;
-  }
-
-  public function newOption($data, $destiny) 
-  {
-    $votacion = VotacionModel::ReadModelFromPost($data);
-    $votacion = VotacionModel::AddNewDefaultOption($votacion);
-    return ["Code" => 0, "message" => "Opción eliminada.", "votacion" => $votacion];
-  }
-
-  public function removeOption($data, $idOpcion) 
-  {
-    $votacion = VotacionModel::ReadModelFromPost($data);
-    $votacion = VotacionModel::RemoveOpcionById($votacion, $idOpcion);
-    return ["Code" => 0, "message" => "Opción eliminada.", "votacion" => $votacion];
-  }
-
-  public function store($data)
-  {
-    $votacion = VotacionModel::ReadModelFromPost($data);
-    $respuesta = VotacionModel::CreateVotacion($votacion);
-    return $respuesta;
-  }
 
   public function index()
   {
     $respuesta = VotacionModel::GetAllVotaciones();
+    return $respuesta;
+  }
+
+  public function store($votacion)
+  {
+    $respuesta = VotacionModel::CreateVotacion($votacion);
     return $respuesta;
   }
 
