@@ -77,7 +77,7 @@ export default {
                 const datosVotaciones = await respuestaHttp.json();
                 console.log(datosVotaciones);
                 if (datosVotaciones && (datosVotaciones.Code == Codigos.CodeSuccess)) {
-                    this.votaciones = datosVotaciones.votaciones;
+                    this.votaciones = datosVotaciones.votacion;
                 } else {
                     this.$emit('mostrarMensaje', datosVotaciones);
                 }
