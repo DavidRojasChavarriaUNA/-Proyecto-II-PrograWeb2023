@@ -34,7 +34,7 @@
                             </div>
                             <div class="uk-text-small uk-text-center">
                                 Necesita registrarse?
-                                <a href="/seguridad/showRegistrationForm">Crear una cuenta</a>
+                                <router-link to="/register">Crear una cuenta</router-link>
                             </div>
                         </form>
                     </div>

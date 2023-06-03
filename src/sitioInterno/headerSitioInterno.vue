@@ -40,7 +40,7 @@
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav d-flex">
-            <li class="me-3" style="max-height:38px">
+            <li class="me-3">
               <form class="d-flex">
                 <input class="form-control me-2" type="text" placeholder="Search">
                 <button class="btn btn-primary" type="button">Search</button>
