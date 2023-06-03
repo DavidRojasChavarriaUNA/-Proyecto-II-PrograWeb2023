@@ -328,7 +328,7 @@
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Pro</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top">A tan solo $200</p>
+                                        <p class="uk-text-meta uk-margin-remove-top"></p><p>A tan solo $200</p>
                                     </div>
                                 </div>
                             </div>
@@ -384,7 +384,7 @@
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Organizacion</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top">A tan solo $400</p>
+                                        <p class="uk-text-meta uk-margin-remove-top"></p><p>A tan solo $400</p>
                                     </div>
                                 </div>
                             </div>
@@ -448,7 +448,7 @@
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Business</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top">Desde $1000</p>
+                                        <p class="uk-text-meta uk-margin-remove-top"></p><p>Desde $1000</p>
                                     </div>
                                 </div>
                             </div>

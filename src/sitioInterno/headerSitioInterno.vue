@@ -50,7 +50,7 @@
               <a class="nav-link text-light">{{usuario.user}}</a>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link text-light" to="/seguridad/logout">Salir</router-link>
+              <router-link class="nav-link text-light" to="/">Salir</router-link>
             </li>
           </ul>
         </div>
