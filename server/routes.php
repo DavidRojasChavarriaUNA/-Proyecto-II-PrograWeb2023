@@ -1,17 +1,10 @@
 <?php
     
-    Route::get('/', 'SitioPublicidadController@index');
     Route::post('server/seguridad/register','SeguridadController@register'); 
     Route::post('server/seguridad/autenticate', 'SeguridadController@autenticate');
     Route::get('server/seguridad/(:number)', 'SeguridadController@LoadAutenticatedUser');
-
-    Route::get('/sitioInterno', 'SitioInternoController@Home');
     
-    Route::resource('/votacion', 'VotacionController');
-    Route::post('server/votacion/newOption', 'VotacionController@newOption');
-    Route::post('server/votacion/removeOption','VotacionController@removeOption');
-    Route::put('server/votacion/newOption', 'VotacionController@newOption');
-    Route::put('server/votacion/removeOption','VotacionController@removeOption');
+    Route::resource('server/votacion', 'VotacionController');
 
     Route::get('server/votacion/(:number)/edit','VotacionController@edit');  
     Route::get('server/votacion/(:number)/delete','VotacionController@destroy');
