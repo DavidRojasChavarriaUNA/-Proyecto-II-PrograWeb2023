@@ -194,10 +194,11 @@
       }
     }
     
-    public static function UpdateVotacion($item, $idsOpcionesEliminar = null)
+    public static function UpdateVotacion($item)
   {
     try {
       $Opciones = $item['opciones'];
+      unset($item['opciones']);
       if (!empty($Opciones)) {
         foreach ($Opciones as $Opcion) {
           if($Opcion['opcionNueva'] == Si){
@@ -219,7 +220,8 @@
           }
         }
       }
-
+      $idsOpcionesEliminar = $item['idsOpcionesEliminar'];
+      unset($item['idsOpcionesEliminar']);
       if (!empty($idsOpcionesEliminar)) {
         foreach ($idsOpcionesEliminar as $idsOpcionEliminar) {
           $respuesta = OpcionModel::DestroyOpcion($idsOpcionEliminar);

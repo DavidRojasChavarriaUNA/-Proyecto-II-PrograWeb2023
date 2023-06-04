@@ -124,7 +124,7 @@
             },
             eliminarOpcion(idOpcion){
                 this.votacion.opciones = this.votacion.opciones.filter(o => o.id !== idOpcion);
-                this.votacion.opciones.sort((a, b) => a.posicion < b.posicion);
+                this.votacion.opciones.sort((a, b) => a.posicion - b.posicion);
             },
             async registrarNuevaVotacion() {
                 try {
