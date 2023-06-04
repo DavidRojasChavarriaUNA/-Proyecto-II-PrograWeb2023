@@ -3,7 +3,7 @@
         <h2 class="text-center">Listado de votaciones</h2>
         <div class="row">
             <div class="col-12 text-end">
-
+                <button class="btn btn-primary" v-on:click="obtenerVotaciones">Consultar</button>
                 <router-link :to="`/votacion/create/${idUsuario}`" class="btn btn-primary" title="Nuevo"><i
                         class="bi bi-plus"></i>Nuevo</router-link>
             </div>
@@ -116,8 +116,7 @@ export default {
                     });
                 const datosVotaciones = await respuestaHttp.json();
                 this.$emit('mostrarMensaje', datosVotaciones);
-                window.location.reload();
-
+                this.obtenerVotaciones();
             } catch (error) {
                 console.log(error);
                 this.$emit('mostrarMensaje', { Code: Codigos.CodeError, message: "Ocurrió un error al eliminar la votación" });
@@ -140,8 +139,7 @@ export default {
                     });
                 const res = await respuestaHttp.json();
                 this.$emit('mostrarMensaje', res);
-
-
+                this.obtenerVotaciones();
             } catch (error) {
                 console.log(error);
                 this.$emit('mostrarMensaje', { Code: Codigos.CodeError, message: "Ocurrió un error al eliminar la votación" });
