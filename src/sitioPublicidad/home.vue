@@ -11,13 +11,13 @@
                                         <p class="textoEnCarrusel pTextoImg1">El voto es un derecho y un secreto, garantizamos
                                             su secreto y
                                             seguridad al votar con nuestra herramienta</p>
-                                        <img src="/public/assets/imagenes/presentación.webp" alt="" uk-cover
+                                        <img src="/assets/imagenes/presentación.webp" alt="" uk-cover
                                             class="img-responsive">
                                     </section>
                                 </li>
                                 <li>
                                     <section>
-                                        <img src="/public/assets/imagenes/diseñoResponsivo.jpeg" alt="" uk-cover
+                                        <img src="/assets/imagenes/diseñoResponsivo.jpeg" alt="" uk-cover
                                             class="img-responsive">
                                         <h1 class="textoEnCarrusel h1TextoImg2">Diseño adaptable</h1>
                                         <p class="textoEnCarrusel pTextoImg2">No importa el tamaño del dispositivo del usuario,
@@ -27,7 +27,7 @@
                                 </li>
                                 <li>
                                     <section>
-                                        <img src="/public/assets/imagenes/Reportes.webp" alt="" uk-cover class="img-responsive">
+                                        <img src="/assets/imagenes/Reportes.webp" alt="" uk-cover class="img-responsive">
                                         <h1 class="textoEnCarrusel h1TextoImg3">Reportes en tiempo Real</h1>
                                         <p class="textoEnCarrusel pTextoImg3">Visualización de resultados en tiempo real
                                             conforme son recibidas
@@ -54,7 +54,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/playstation.png" class="img-responsive">
+                                    <img src="/assets/imagenes/playstation.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/intel.png" class="img-responsive">
+                                    <img src="/assets/imagenes/intel.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/amd.png" class="img-responsive">
+                                    <img src="/assets/imagenes/amd.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/cube.jpg" class="img-responsive">
+                                    <img src="/assets/imagenes/cube.jpg" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/nvidia.png" class="img-responsive">
+                                    <img src="/assets/imagenes/nvidia.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                             <div class="uk-animation-toggle" tabindex="0">
                                 <div
                                     class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
-                                    <img src="/public/assets/imagenes/lego.png" class="img-responsive">
+                                    <img src="/assets/imagenes/lego.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <div class="uk-width-auto">
                                         <img class="img-responsive" style="max-width: 100px;"
-                                            src="/public/assets/imagenes/Mail.png">
+                                            src="/assets/imagenes/Mail.png">
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Notificaciones</h3>
@@ -156,7 +156,7 @@
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <div class="uk-width-auto">
                                         <img class="img-responsive" style="max-width: 100px;"
-                                            src="/public/assets/imagenes/Voto.png">
+                                            src="/assets/imagenes/Voto.png">
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Voto seguro</h3>
@@ -176,7 +176,7 @@
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <div class="uk-width-auto">
                                         <img class="img-responsive" style="max-width: 100px;"
-                                            src="/public/assets/imagenes/formulario.png">
+                                            src="/assets/imagenes/formulario.png">
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Crear voto</h3>
@@ -194,7 +194,7 @@
                 class="uk-section uk-section-muted uk-preserve-color uk-margin uk-padding uk-section uk-section-default uk-margin">
                 <h1 class="uk-text-center">Caracteristicas técnicas</h1>
                 <article class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex"
-                    style="background-image: url('/public/assets/imagenes/Seguridad.jpg');">
+                    style="background-image: url('/assets/imagenes/Seguridad.jpg');">
                     <section class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
                         <h1 class="text-white" uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; end: 50vh + 50%;">Integridad de
                             datos
@@ -205,7 +205,7 @@
                     </section>
                 </article>
                 <article class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex"
-                    style="background-image: url('/public/assets/imagenes/Soporte.jpg');">
+                    style="background-image: url('/assets/imagenes/Soporte.jpg');">
                     <section class="uk-width-1-2@m uk-text-center  uk-margin-auto" style="margin-top: 300px;">
                         <h1 class="text-white"
                             uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;">
@@ -219,7 +219,7 @@
                     </section>
                 </article>
                 <article class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex"
-                    style="background-image: url('/public/assets/imagenes/SecurityLoggin.png');">
+                    style="background-image: url('/assets/imagenes/SecurityLoggin.png');">
                     <section class="uk-width-1-2@m uk-text-center">
                         <h1 class="text-white"
                             uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;">
@@ -239,7 +239,7 @@
                         <div>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top">
-                                    <img src="/public/assets/imagenes/accesibility.png" width="1800" height="1200" alt="">
+                                    <img src="/assets/imagenes/accesibility.png" width="1800" height="1200" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Accesibilidad</h3>
@@ -254,7 +254,7 @@
                         <div>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top">
-                                    <img src="/public/assets/imagenes/auditoria.jpg" width="1800" height="1200" alt="">
+                                    <img src="/assets/imagenes/auditoria.jpg" width="1800" height="1200" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Auditoria de votos</h3>
@@ -267,7 +267,7 @@
                         <div>
                             <div class="uk-card uk-card-default">
                                 <div class="uk-card-media-top">
-                                    <img src="/public/assets/imagenes/analitica.jpg" width="1800" height="1200" alt="">
+                                    <img src="/assets/imagenes/analitica.jpg" width="1800" height="1200" alt="">
                                 </div>
                                 <div class="uk-card-body">
                                     <h3 class="uk-card-title">Analitica y reporteria</h3>
@@ -286,7 +286,7 @@
                 <h1>Servicio al cliente personalizado para asegurar sus elecciones</h1>
                 <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                     <div class="uk-card-media-left uk-cover-container">
-                        <img src="/public/assets/imagenes/customerservice.webp" alt="" uk-cover>
+                        <img src="/assets/imagenes/customerservice.webp" alt="" uk-cover>
                         <canvas width="600" height="400"></canvas>
                     </div>
                     <div class="uk-align-center uk-text-middle">
@@ -301,7 +301,7 @@
 
                 <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                     <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
-                        <img src="/public/assets/imagenes/teamMeeting.jpg" alt="" uk-cover>
+                        <img src="/assets/imagenes/teamMeeting.jpg" alt="" uk-cover>
                         <canvas width="600" height="400"></canvas>
                     </div>
                     <div class="uk-text-middle uk-align-center">
@@ -324,7 +324,7 @@
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <div class="uk-width-auto">
                                         <img class="uk-border-circle" width="40" height="40"
-                                            src="/public/assets/imagenes/happyFacepng.png">
+                                            src="/assets/imagenes/happyFacepng.png">
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Pro</h3>
@@ -380,7 +380,7 @@
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <div class="uk-width-auto">
                                         <img class="uk-border-circle" width="40" height="40"
-                                            src="/public/assets/imagenes/nerdFace.jpg">
+                                            src="/assets/imagenes/nerdFace.jpg">
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Organizacion</h3>
@@ -444,7 +444,7 @@
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <div class="uk-width-auto">
                                         <img class="uk-border-circle" width="40" height="40"
-                                            src="/public/assets/imagenes/cooldFace.png">
+                                            src="/assets/imagenes/cooldFace.png">
                                     </div>
                                     <div class="uk-width-expand">
                                         <h3 class="uk-card-title uk-margin-remove-bottom">Business</h3>
