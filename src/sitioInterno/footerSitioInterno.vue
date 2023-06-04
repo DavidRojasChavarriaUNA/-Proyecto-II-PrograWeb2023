@@ -1,7 +1,7 @@
 <template>
     <footer class="bg-dark p-1">
         <div class="p-2">
-            <img id="logoFooter" src="/public/assets/imagenes/logo.png" class="mx-auto d-block" />
+            <img id="logoFooter" src="/assets/imagenes/logo.png" class="mx-auto d-block" />
         </div>
         <p class="text-light text-center m-1">
             Mi voto es una aplicación desarrollada para el proyecto II, del Curso programación web de la UNA - 2023.

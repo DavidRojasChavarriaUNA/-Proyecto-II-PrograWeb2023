@@ -7,7 +7,7 @@
                <ul class="uk-navbar-nav">
                    <li class="uk-parent">
                        <router-link class="text-menu" to="/home">
-                           <img src="/public/assets/imagenes/logo.png" class="logo img-responsive" />
+                           <img src="/assets/imagenes/logo.png" class="logo img-responsive" />
                        </router-link>
                    </li>
                    <li class="uk-parent uk-visible@m"><a class="text-menu" href="/home#lstClientes">Clientes</a></li>
@@ -43,7 +43,7 @@
                <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
                    <li>
                        <router-link class="text-menu" to="/#bienvenida">
-                           <img src="/public/assets/imagenes/logo.png" class="logo img-responsive" style="margin-left: -5px; margin-top: -13px;" />
+                           <img src="/assets/imagenes/logo.png" class="logo img-responsive" style="margin-left: -5px; margin-top: -13px;" />
                        </router-link>
                    </li>
                    <li><a class="text-menu" href="/#lstClientes">Clientes</a></li>

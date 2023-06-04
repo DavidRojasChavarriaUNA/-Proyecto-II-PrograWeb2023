@@ -1,7 +1,7 @@
 <template>
     <footer id="footer">
         <div class="uk-text-center">
-            <img src="/public/assets/imagenes/logo.png" class="logo img-responsive" />
+            <img src="/assets/imagenes/logo.png" class="logo img-responsive" />
         </div>
         <!--menu, se asigna el contenedor-->
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
