@@ -3,7 +3,7 @@
         <article>
             <section>
                 <form>
-                    <h1 class="text-center">Crear votación</h1>
+                    <h1 class="text-center">Editar votación</h1>
                     <input type="hidden" v-model="votacion.id" name="id" required>
                     <input type="hidden" v-model="votacion.idEstado" name="idEstado" required>
                     <!-- <input type="file" name="my_file"> -->
@@ -35,16 +35,16 @@
                         <div class="row bg-white" id="ListaOpcionesAgregar">
                             <!-- Listado de opciones -->
                             <option-vue v-for="(opcion, index) in votacion.opciones" 
-                                        v-bind:key="opcion.id" 
-                                        v-bind:opcion="opcion"
-                                        v-on:eliminarOpcion="eliminarOpcion"
+                                        v-bind:key="opcion.id"
+                                        v-bind:opcion="opcion" 
+                                        v-on:eliminarOpcion="eliminarOpcion" 
                                         v-model="opcion[index]">
                             </option-vue>
                             <!-- Nueva opción -->
                             <new-option-vue v-on:agregarNuevaOpcion="agregarNuevaOpcion"></new-option-vue>
                         </div>
                         <div class="d-grid gap-2 col-6 mx-auto mt-5">
-                            <button type="button" class="btn btn-outline-success" id="GuardadoExitosoBtn" v-on:click="registrarNuevaVotacion">
+                            <button type="button" class="btn btn-outline-success" id="GuardadoExitosoBtn" v-on:click="modificarVotacion">
                                 Guardar
                             </button>
                         </div>
@@ -56,8 +56,8 @@
 </template>
 
 <script>
-    import {Codigos} from '../../js/sitioInterno';
-    import {v4 as uuidv4} from 'uuid';
+    import { Codigos } from '../../js/sitioInterno';
+    import { v4 as uuidv4 } from 'uuid';
     import newOptionVue from './newOption.vue';
     import optionVue from '../votacion/option.vue';
 
@@ -68,7 +68,10 @@
         data() {
             return {
                 idUsuario: 0,
-                votacion: null
+                votacion: null,
+                idVotacion: 0,
+                opciones: [],
+                opc:[],
             }
         },
         components: {
@@ -77,35 +80,69 @@
         },
         created() {
             this.InicializarData();
-            this.crearNuevaVotacion();
         },
         methods: {
             InicializarData() {
                 this.idUsuario = this.$route.params.idUsuario;
+                this.idVotacion = this.$route.params.idVotacion;
+                this.editarVotacion(this.idVotacion);
             },
-            redireccionarEditar() {
-                this.$router.push(`/votacion/${this.idUsuario}/${this.votacion.id}/edit`);
-                //this.crearNuevaVotacion();
+            redireccionarLista() {
+                this.$router.push(`/votaciones/${this.idUsuario}`); //
+
             },
-            crearNuevaVotacion(){
-                this.votacion = {
-                    id: uuidv4(),
-                    idEstado: Codigos.EstadoEnProceso,
-                    descripcion: '',
-                    fechaHoraInicio: '',
-                    fechaHoraFin: '',
-                    opciones: []
+            async editarVotacion(idV) {
+                try {
+                    const respuestaHttp = await fetch(`${urlBase}/votacion/${idV}/edit`, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    console.log(respuestaHttp);
+                    const datosVotacion = await respuestaHttp.json();
+                    console.log(datosVotacion);
+                    if (datosVotacion && (datosVotacion.Code == Codigos.CodeSuccess)) {
+                    this.votacion = datosVotacion.votacion;
+                        this.opciones = this.votacion['opciones'];
+                        
+                        this.votacion = null;
+                        for (var i = 0; i < this.opciones.length; i++) {
+                            
+                            this.opc[i] = {
+                                id: this.opciones[i]['id'],
+                                nombre: this.opciones[i]['nombre'],
+                                descripcion: this.opciones[i]['descripcion'],
+                                rutaImagen: this.opciones[i]['rutaImagen'],
+                                idVotacion: this.opciones[i]['idVotacion'],
+                                opcionNueva: 'No',
+                                posicion: this.opciones[i]['posicion']
+                            }
+                        }
+                        this.votacion = {
+                            id: datosVotacion.votacion['id'],
+                            idEstado: datosVotacion.votacion['idEstado'],
+                            descripcion: datosVotacion.votacion['descripcion'],
+                            fechaHoraInicio: datosVotacion.votacion['fechaHoraInicio'],
+                            fechaHoraFin: datosVotacion.votacion['fechaHoraFin'],
+                            opciones: this.opc,
+                            idsOpcionesEliminar: []
+                        }
+                        
+                    } else {
+                        this.$emit('mostrarMensaje', datosVotacion);
+                    }
+                } catch (error) {
+                    console.log(error);
+                    this.$emit('mostrarMensaje', { Code: Codigos.CodeError, message: "Ocurrió un error al obtener la votación", error });
                 }
-                this.agregarNuevaOpcion();
-                this.agregarNuevaOpcion();
             },
-            obtenerSiguientePosicion(){
-                if(!this.votacion.opciones || this.votacion.opciones.length === 0)
+            obtenerSiguientePosicion() {
+                if (!this.votacion.opciones || this.votacion.opciones.length === 0)
                     return 1;
                 const posiciones = this.votacion.opciones.map(o => o.posicion);
                 return Math.max(...posiciones) + 1;
             },
-            crearNuevaOpcion(){
+            crearNuevaOpcion() {
                 const opcion = {
                     id: uuidv4(),
                     nombre: '',
@@ -113,22 +150,28 @@
                     rutaImagen: RutaImagenDefault,
                     idVotacion: this.votacion.id,
                     posicion: this.obtenerSiguientePosicion(),
+                    opcionNueva: 'Si'
                 }
                 return opcion;
             },
-            agregarNuevaOpcion(mostrarMensaje = false){
+            agregarNuevaOpcion(mostrarMensaje = false) {
                 this.votacion.opciones.push(this.crearNuevaOpcion());
-                if(mostrarMensaje){
-                    this.$emit('mostrarMensaje', {Code: Codigos.CodeSuccess, message: "Opción agregada"});
+                if (mostrarMensaje) {
+                    this.$emit('mostrarMensaje', { Code: Codigos.CodeSuccess, message: "Opción agregada" });
                 }
             },
-            eliminarOpcion(idOpcion){
+            eliminarOpcion(idOpcion) {
+                const opcion = this.votacion.opciones.find(o => o.id === idOpcion);
+                if(!opcion)
+                    return;
                 this.votacion.opciones = this.votacion.opciones.filter(o => o.id !== idOpcion);
                 this.votacion.opciones.sort((a, b) => a.posicion - b.posicion);
+                if(opcion.opcionNueva === 'No')
+                    this.votacion.idsOpcionesEliminar.push(idOpcion);
             },
-            async registrarNuevaVotacion() {
+            async modificarVotacion() {
                 try {
-                    const url = `${urlBase}/votacion`;
+                    const url = `${urlBase}/votacion/${this.idVotacion}`;
 
                     const respuestaHttp = await fetch(url, {
                         headers: {
@@ -141,14 +184,13 @@
                     const datosVoto = await respuestaHttp.json();
                     this.$emit('mostrarMensaje', datosVoto);
                     if (datosVoto && (datosVoto.Code == Codigos.CodeSuccess)) {
-                        this.votacion.id = datosVoto.id;
-                        this.redireccionarEditar();
+                        this.redireccionarLista();
                     }
                 } catch (error) {
                     console.log(error);
                     this.$emit('mostrarMensaje', {
                         Code: Codigos.CodeError,
-                        message: "Ocurrió un error al crear la votación"
+                        message: "Ocurrió un error al modificar la votación"
                     });
                 }
             }

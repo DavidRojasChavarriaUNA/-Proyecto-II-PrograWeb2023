@@ -12,6 +12,7 @@ import Votar from './sitioInterno/votante/vote.vue'
 import ResultadosIndex from './sitioInterno/resultados/index.vue'
 import resultDetalle from './sitioInterno/resultados/resultDetails.vue'
 import Votaciones from './sitioInterno/votacion/index.vue'
+import Votacion from './sitioInterno/votacion/edit.vue'
 
 import SitioPublicidad from './sitioPublicidad/App.vue'
 import Home from './sitioPublicidad/home.vue'
@@ -38,14 +39,15 @@ const routes = [
             //{ path: '/votacion/:idUsuario/:idVotacion/', component:  }, --componente editar votacion
             { path: '/resultados/:idUsuario', component: ResultadosIndex },
             { path: '/resultados/:idUsuario/:idVotacion', component: resultDetalle },
-            { path: '/votaciones/:idUsuario', component: Votaciones }
+            { path: '/votaciones/:idUsuario', component: Votaciones },
+            { path: '/votacion/:idUsuario/:idVotacion/edit', component: Votacion },
         ]
     },
     /*{
         path: '/sitioPublicidad', component: SitioPublicidad,
         children: [
             { path: '/home', component: Home },
-            { path: '/register', component: Register },
+            { path: '/register', component: Register },,
             { path: '/login', component: Login }
         ]
     },*/

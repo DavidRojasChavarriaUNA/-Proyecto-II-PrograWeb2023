@@ -4,7 +4,9 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <label class="form-label text-primary  mt-2">Seleccionar imagen:</label>
-                <img :src="opcion.rutaImagen" :id="`img${opcion.posicion}`"
+                <img v-if="opcion.rutaImagen" :src="opcion.rutaImagen" :id="`img${opcion.posicion}`"
+                    class="imgChooser img-polaroid profile-img img-thumbnail" />
+                <img v-else src="../../../public/assets/imagenes/SeleccionarImagen.png" :id="`img${opcion.posicion}`"
                     class="imgChooser img-polaroid profile-img img-thumbnail" />
                 <input type="hidden" v-model="opcion.rutaImagen" :id="`rutaImagen${opcion.posicion}`" />
                 <input class="form-control form-control-sm" type="file" accept="image/png, image/jpeg" AutofileChooser

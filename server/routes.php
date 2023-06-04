@@ -9,6 +9,7 @@
     Route::get('server/votacion/(:number)/edit','VotacionController@edit');  
     Route::get('server/votacion/(:number)/delete','VotacionController@destroy');
     Route::get('server/votacion/(:number)/desactivar','VotacionController@cambiarEstado');
+    Route::post('server/votacion/(:number)','VotacionController@update'); 
     
     Route::get('server/votante/(:number)', 'VotanteController@index');
     Route::get('server/votante/(:number)/votar', 'VotanteController@votar');
