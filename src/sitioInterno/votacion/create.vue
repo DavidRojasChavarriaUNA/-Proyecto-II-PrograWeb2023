@@ -140,7 +140,10 @@
                     });
                     const datosVoto = await respuestaHttp.json();
                     this.$emit('mostrarMensaje', datosVoto);
-                    this.redireccionarEditar();
+                    if (datosVoto && (datosVoto.Code == Codigos.CodeSuccess)) {
+                        this.votacion.id = datosVoto.id;
+                        this.redireccionarEditar();
+                    }
                 } catch (error) {
                     console.log(error);
                     this.$emit('mostrarMensaje', {
