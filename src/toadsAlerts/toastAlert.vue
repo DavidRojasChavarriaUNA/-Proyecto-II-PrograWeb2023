@@ -1,6 +1,6 @@
 <template>
     <div class="toast-container position-absolute p-3 bottom-0 end-0"
-        data-original-class="toast-container position-absolute p-3">
+        data-original-class="toast-container position-absolute p-3" style="position: fixed !important;">
         <div v-for="(mensaje, index) in mensajes" :key="index" class="toast fade show bg-toast" :id="`toast${index}`">
             <div class="toast-header">
                 <strong class="me-auto">Mensaje</strong>

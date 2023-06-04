@@ -25,10 +25,9 @@ class VotacionController extends Controller
       return $respuesta;
   }
 
-  public function update($data)
+  public function update($votacion)
   {
-   
-        $respuesta = VotacionModel::UpdateVotacion($votacion, null);
+    $respuesta = VotacionModel::UpdateVotacion($votacion);
     return $respuesta;
   }
   public function destroy($id)

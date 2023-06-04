@@ -64,6 +64,7 @@
                     const datosVotaciones = await respuestaHttp.json();
                     if (datosVotaciones && (datosVotaciones.Code == Codigos.CodeSuccess)) {
                         this.votacionesActivasFinalizadas = datosVotaciones.votaciones;
+                        this.$emit('mostrarMensaje',{Code: Codigos.CodeSuccess, message: "Se ha obtenido los datos más recientes"});
                     } else {
                         this.$emit('mostrarMensaje',datosVotaciones);
                     }

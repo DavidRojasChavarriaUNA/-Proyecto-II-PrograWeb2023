@@ -3,7 +3,7 @@
         <h2 class="text-center">Listado de votaciones</h2>
         <div class="row">
             <div class="col-12 text-end">
-                <button class="btn btn-primary" v-on:click="obtenerVotaciones">Consultar</button>
+                <button class="btn btn-primary" v-on:click="obtenerVotaciones" style="margin-right: 10px;">Consultar</button>
                 <router-link :to="`/votacion/create/${idUsuario}`" class="btn btn-primary" title="Nuevo"><i
                         class="bi bi-plus"></i>Nuevo</router-link>
             </div>
@@ -92,6 +92,7 @@ export default {
                 console.log(datosVotaciones);
                 if (datosVotaciones && (datosVotaciones.Code == Codigos.CodeSuccess)) {
                     this.votaciones = datosVotaciones.votacion;
+                    this.$emit('mostrarMensaje',{Code: Codigos.CodeSuccess, message: "Se ha obtenido los datos más recientes"});
                 } else {
                     this.$emit('mostrarMensaje', datosVotaciones);
                 }

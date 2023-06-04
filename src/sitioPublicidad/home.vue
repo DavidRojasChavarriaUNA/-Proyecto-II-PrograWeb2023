@@ -1,6 +1,5 @@
 <template>
         <main class="uk-container">
-            <router-link to="/votaciones/1">degrtgrthyrfgy</router-link>
             <section id="bienvenida">
                 <article class="uk-article">
                     <div uk-slideshow="animation: push">
