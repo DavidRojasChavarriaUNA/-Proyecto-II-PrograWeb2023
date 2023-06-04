@@ -15,6 +15,8 @@
             if(!empty($result)){
                 if(($result[0]['password']) == ($userToAutenticate["password"])){
                     return ["Code" => CodeSuccess, "message" => "Usuario autenticado", "id" => $result[0]['id']];
+                }else{
+                    return ["Code" => CodeUnautorized, "message" => "Usuario o contraseña inválido."];
                 }
             
             }else{
