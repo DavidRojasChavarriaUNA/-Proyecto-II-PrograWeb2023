@@ -11,6 +11,12 @@
                             Bienvenido de vuelta!
                         </h3>
                         <form class="uk-form-stacked">
+                            <template v-if="message">
+                              <div class="uk-alert-danger" uk-alert>
+                                <a class="uk-alert-close" uk-close></a>
+                                <p>{{message}}</p>
+                              </div>
+                            </template>
                             <div class="uk-margin">
                                 <label class="uk-form-label" for="form-stacked-text">Correo electrónico</label>
                                 <div class="uk-inline uk-width-1-1">
@@ -46,6 +52,7 @@
 </template>
 
 <script>
+import { triggerRef } from 'vue';
 import { Codigos } from '../../js/sitioPublicidad'
 
 const urlBase = import.meta.env.VITE_BASE_URL;
@@ -53,13 +60,17 @@ const urlBase = import.meta.env.VITE_BASE_URL;
 export default {
   data() {
     return {
-      user: { 'email': '', 'password': '' }
+      user: { 'email': '', 'password': '' },
+      message: null
     }
   },
   components: {
 
   },
   methods: {
+    mostrarMensaje(mensaje){
+      this.message = `${mensaje.Code} - ${mensaje.message}`;
+    },
     async loginUser(u) { 
       console.log(u);
       try {
@@ -81,11 +92,11 @@ export default {
           //enviar al sitio interno
           this.$router.push(`/sitioInterno/${respuesta.id}`);
         } else {
-          this.$emit('mostrarMensaje', respuesta);
+          this.mostrarMensaje(respuesta);
         }
       } catch (error) {
         console.log(error);
-        this.$emit('mostrarMensaje', { Code: Codigos.CodeError, message: "Ocurrió un error al registrar el usuario" });
+        this.mostrarMensaje({ Code: Codigos.CodeError, message: "Ocurrió un error al autenticar el usuario" });
       }
     }
   }
