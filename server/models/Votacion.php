@@ -198,9 +198,6 @@
   {
     try {
       $Opciones = $item['opciones'];
-      unset($item['opciones']);
-      unset($item['totalOpciones']);
-
       if (!empty($Opciones)) {
         foreach ($Opciones as $Opcion) {
           if($Opcion['opcionNueva'] == Si){
