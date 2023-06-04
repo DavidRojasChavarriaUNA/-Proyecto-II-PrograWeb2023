@@ -62,7 +62,7 @@
     import optionVue from '../votacion/option.vue';
 
     const urlBase = import.meta.env.VITE_BASE_URL;
-    const RutaImagenDefault = '../../../public/assets/imagenes/SeleccionarImagen.png';
+    const RutaImagenDefault = import.meta.env.VITE_BASE_RUTA_IMAGEN_DEFAULT;
 
     export default {
         data() {
