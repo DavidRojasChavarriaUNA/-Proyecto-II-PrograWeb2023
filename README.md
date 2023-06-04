@@ -20,4 +20,4 @@ Repositorio
 	https://github.com/DavidRojasChavarriaUNA/-Proyecto-II-PrograWeb2023
 Sitio web
 Podrá acceder al sitio web del proyecto I en la siguiente dirección web:
-	http://proyecto-ii-prograweb-2023.42web.io/
+	http://pr-ii-prg-web-2023.liveblog365.com/
